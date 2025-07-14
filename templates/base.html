@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{% block meta_description %}Default site description{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}Default keywords{% endblock %}">
+    <meta name="robots" content="index, follow">
+    <title>{% block title %}My Personal Website{% endblock %}</title>
+    {% load static %}
+    {% include 'partials/refrences.html' %}
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+
+     
+    {% include 'partials/navbar.html' %}
+            
+       
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+  
+
+   
+    {% include 'partials/footer.html' %}
+   
+   
+
+    {% include 'partials/loader.html' %}
+
+{% block extra_scripts %}
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+
+</body>
+</html>

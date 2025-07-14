@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Clark Thompson{% endblock %}
+{% block meta_description %}Personal website of Clark Thompson, a freelance web designer{% endblock %}
+{% block meta_keywords %}web designer, freelancer, portfolio{% endblock %}
+
+
+# CONTENT OF SITE
+{% block content %}
+    {% include 'partials/hero.html' %}
+    {% include 'home/about.html' %}
+    {% include 'resume/resume.html' %}
+    {% include 'blog_app/services.html' %}
+    {% include 'resume/skills.html' %}
+    {% include 'resume/projects.html' %}
+    {% include 'blog_app/posts.html' %}
+    {% include 'home/counter.html' %}
+    {% include 'home/hireme.html' %}
+    {% include 'home/contact.html' %}
+{% endblock %}
+
+
+
+{% block extra_scripts %}
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+
+{% endblock %}
+

@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ project.title }} | Project{% endblock %}
+
+{% block content %}
+
+<!-- 🔷 Hero Header Section (shared style) -->
+<!-- Header Section -->
+<section class="hero-wrap js-fullheight" style="background-image: url({% static 'images/solarus-planet-red-planet-fiction-outer-space-4096x3112-8759.jpg' %});
+        " data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+      <div class="col-md-12 ftco-animate pb-5 mb-3 text-center">
+        <h1 class="mb-3 bread">{{ project.title }}</h1>
+        <p class="breadcrumbs">
+          <span class="mr-2"><a href="{% url 'home:home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span>
+          <span class="mr-2"><a href="#">Projects <i class="ion-ios-arrow-forward"></i></a></span>
+          <span>Service Detail <i class="ion-ios-arrow-forward"></i></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🔶 Project Detail Section -->
+<section class="ftco-section bg-white" id="project-detail">
+  <div class="container">
+
+    <!-- 📷 Project Main Image -->
+    {% if project.main_image %}
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-10">
+        <img src="{{ project.main_image.url }}" alt="{{ project.title }}" class="img-fluid rounded shadow-sm">
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- 💡 Project Cards -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-10">
+        <div class="row">
+
+          <div class="col-md-4 mb-4 d-flex align-items-stretch">
+            <div class="card shadow-sm w-100">
+              <div class="card-body">
+                <h5 class="card-title text-primary">🛠️ Tech Stack</h5>
+                <p class="card-text text-muted">{{ project.tech_stack }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4 d-flex align-items-stretch">
+            <div class="card shadow-sm w-100">
+              <div class="card-body">
+                <h5 class="card-title text-primary">📦 Project Type</h5>
+                <p class="card-text text-muted">{{ project.project_type }}</p>
+              </div>
+            </div>
+          </div>
+
+          {% if project.source_code_url %}
+          <div class="col-md-4 mb-4 d-flex align-items-stretch">
+            <div class="card shadow-sm w-100">
+              <div class="card-body">
+                <h5 class="card-title text-primary">💻 GitHub</h5>
+                <a href="{{ project.source_code_url }}" class="btn btn-outline-dark btn-sm" target="_blank">View Source</a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if project.live_demo_url %}
+          <div class="col-md-4 mb-4 d-flex align-items-stretch">
+            <div class="card shadow-sm w-100">
+              <div class="card-body">
+                <h5 class="card-title text-primary">🚀 Live Demo</h5>
+                <a href="{{ project.live_demo_url }}" class="btn btn-outline-success btn-sm" target="_blank">Launch Demo</a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 📝 Full Description -->
+    {% if project.description %}
+    <section class="ftco-section bg-dark py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <h2 class="mb-4">About this project</h2>
+            <div class="desc text-muted lead">
+              {{ project.description|safe }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- 🔙 Back Button -->
+    <div class="row justify-content-center pt-5">
+      <div class="col-md-6 text-center">
+        <a href="{% url 'home:home' %}#resume" class="btn btn-outline py-3 px-5">← Back to Projects</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
