@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Project
+from .models import *
+
 
 
 @admin.register(Project)
@@ -25,6 +26,20 @@ class ProjectAdmin(admin.ModelAdmin):
         }),
         ('Metadata', {
             'fields': ('tech_stack', 'created_at', 'updated_at')
+        }),
+    )
+
+
+@admin.register(Resume)
+class ResumeAdmin(admin.ModelAdmin):
+    list_display = ['title', 'institution', 'daterange', 'column', 'created_at']
+    list_editable = ('column',)
+    list_filter = ('column', 'created_at')
+    search_fields = ('title', 'institution', 'daterange')
+    ordering = ('-created_at',)
+    fieldsets = (
+        (None, {
+            'fields': ('daterange', 'title', 'institution', 'description', 'column')
         }),
     )
 

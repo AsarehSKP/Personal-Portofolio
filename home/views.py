@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
 from blog_app.models import Service,BlogPost
-from resume.models import Project
+from resume.models import Project, Resume
 from django.contrib import messages
 
 
@@ -14,6 +14,9 @@ def home(request):
     latest_projects = Project.objects.all()[:6]
     about = About.objects.first()
     site_info = About.objects.first()
+
+    resume_left = Resume.objects.filter(column='left')
+    resume_right = Resume.objects.filter(column='right')
 
     if request.method == 'POST':
         name = request.POST['name']
@@ -36,6 +39,8 @@ def home(request):
         'latest_posts': latest_posts,
         'latest_projects': latest_projects,
         'site_info': site_info,
+        'resume_left': resume_left,
+        'resume_right': resume_right
     }
 
     return render(request, 'home/index.html', context)

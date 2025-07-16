@@ -73,3 +73,24 @@ class Project(models.Model):
         ordering = ['-created_at']
         verbose_name = "Project"
         verbose_name_plural = "Projects"
+
+
+class Resume(models.Model):
+    class Section(models.TextChoices):
+        LEFT = 'left', 'Left Column'
+        RIGHT = 'right', 'Right Column'
+
+    daterange = models.CharField("Date (e, g, 2020-2021)", max_length=100)
+    title = models.CharField("Title", max_length=200)
+    institution = models.CharField("Institution / Position", max_length=100)
+    description = models.TextField("Full Description", blank=True)
+    column = models.CharField("Display Column", max_length=10, choices=Section.choices, default=Section.LEFT)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.title} - {self.institution}"
+
+    class Meta:
+        ordering = ['column', '-created_at']
+        verbose_name = "Resume Entry"
+        verbose_name_plural = "Resume Entries"
