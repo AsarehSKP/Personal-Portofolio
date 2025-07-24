@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from weasyprint import HTML
+from django.template.loader import render_to_string
 from .models import *
 from blog_app.models import Service,BlogPost
-from resume.models import Project, Resume
+from resume.models import *
 from django.contrib import messages
 
 
@@ -14,6 +17,11 @@ def home(request):
     latest_projects = Project.objects.all()[:6]
     about = About.objects.first()
     site_info = About.objects.first()
+
+    try:
+        cv = CV_pdf.objects.latest('created_at')  # یا هر شرط خاص
+    except CV_pdf.DoesNotExist:
+        cv = None
 
     resume_left = Resume.objects.filter(column='left')
     resume_right = Resume.objects.filter(column='right')
@@ -32,6 +40,7 @@ def home(request):
             messages.error(request, 'Please fill all the fields')
 
     context = {
+        'cv': cv,
         'about': about,
         'profile': profile,
         'skills': skills,
@@ -44,3 +53,15 @@ def home(request):
     }
 
     return render(request, 'home/index.html', context)
+
+
+def download_CVpdf(request, pk):
+    cv = CV_pdf.objects.get(pk=pk)
+    html_string = render_to_string('home/cv_pdf.html', {'cv': cv})
+    html = HTML(string=html_string)
+    pdf_file = html.write_pdf()
+
+    response = HttpResponse(pdf_file, content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename="{cv.first_name}_{cv.last_name}_CV.pdf"'
+    return response
+

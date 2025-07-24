@@ -38,13 +38,29 @@
     </div>
 
     <!-- Download Button -->
-    <div class="row justify-content-center mt-5">
-      <div class="col-md-6 text-center ftco-animate">
-{#        <p><a href="{% url 'download_resume_pdf' %}" class="btn btn-primary py-4 px-5">Download CV</a></p>#}
-      </div>
-    </div>
+
+  <!-- Download Button -->
+    <!-- Download Button -->
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6 text-center ftco-animate">
+    {% if cv %}
+      <p>
+        <a href="{% url 'home:download_cv' cv.pk %}" class="btn btn-primary py-4 px-5">
+          Download CV (PDF)
+        </a>
+      </p>
+    {% else %}
+      <p>No CV available at the moment.</p>
+    {% endif %}
   </div>
-</section>
+</div>
+{#    <div class="row justify-content-center mt-5">#}
+{#      <div class="col-md-6 text-center ftco-animate">#}
+{#        <p><a href="{% url 'download_resume_pdf' %}" class="btn btn-primary py-4 px-5">Download CV</a></p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#</section>#}
 
 {##}
 {#{% load static %}#}

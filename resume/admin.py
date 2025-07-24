@@ -43,3 +43,11 @@ class ResumeAdmin(admin.ModelAdmin):
         }),
     )
 
+
+@admin.register(CV_pdf)
+class CVPDFAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'updated_at', 'created_at')
+    list_filter = ('first_name', 'last_name', 'created_at', 'updated_at')
+    search_fields = ('first_name', 'last_name')
+    ordering = ('-updated_at',)
+

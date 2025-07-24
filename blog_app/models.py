@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.html import format_html
 from django.utils.text import slugify
 from PIL import Image
-from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 
 
@@ -150,7 +150,7 @@ class BlogPost(models.Model):
     title = models.CharField("Title", max_length=200)
     slug = models.SlugField("Slug", unique=True)
     summary = models.TextField("Summary", blank=True)
-    content = RichTextField("Full Content", blank=True)
+    content = RichTextUploadingField("Full Content", blank=True)
 
     thumbnail = models.ImageField("Thumbnail Image", upload_to='blog/thumbnails/', blank=True, null=True)
     main_image = models.ImageField("Main Article Image", upload_to='blog/main_images/', blank=True, null=True)

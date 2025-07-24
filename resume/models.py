@@ -94,3 +94,30 @@ class Resume(models.Model):
         ordering = ['column', '-created_at']
         verbose_name = "Resume Entry"
         verbose_name_plural = "Resume Entries"
+
+
+class CV_pdf(models.Model):
+    first_name = models.CharField("First Name", max_length=100)
+    last_name = models.CharField("Last Name", max_length=100)
+    birth_date = models.DateField("Date of Birth", blank=True, null=True)
+    language = models.CharField("Language", max_length=100)
+    soft_skills = models.CharField("Soft-Skills", max_length=100)
+    hard_skills = models.CharField("Hard-Skills", max_length=100)
+    education = models.CharField("Education", max_length=100)
+    certification = models.CharField("Certification", max_length=100)
+    experience = models.CharField("Experience", max_length=100)
+    summary = RichTextField("Summary", blank=True, null=True)
+
+    resume = models.ManyToManyField(Resume)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+    class Meta:
+        ordering = ['first_name', '-created_at']
+        verbose_name = "CV PDF"
+        verbose_name_plural = "CV PDFs"
+
+
