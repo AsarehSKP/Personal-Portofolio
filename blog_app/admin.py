@@ -11,7 +11,7 @@ class ServiceFeatureInline(admin.TabularInline):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('title', 'status', 'order', 'icon_tag')
+    list_display = ('title', 'status', 'icon_tag')
     list_filter = ('status',)
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ('title', 'short_description')
@@ -22,7 +22,7 @@ class ServiceAdmin(admin.ModelAdmin):
         (None, {
             'fields': (
                 'title', 'slug', 'short_description', 'description',
-                'status', 'order'
+                'status'
             )
         }),
         ("Images", {
@@ -66,8 +66,8 @@ class BlogPostAdminForm(forms.ModelForm):
 class BlogPostAdmin(admin.ModelAdmin):
     form = BlogPostAdminForm
 
-    list_display = ('title', 'status', 'created_at', 'updated_at')
-    list_filter = ('status', 'created_at')
+    list_display = ('title', 'category','status', 'created_at', 'updated_at')
+    list_filter = ('status', 'created_at','category')
     list_editable = ('status',)
     search_fields = ('title', 'summary', 'content')
     prepopulated_fields = {'slug': ('title',)}

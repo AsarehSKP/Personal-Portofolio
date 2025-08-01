@@ -1,11 +1,12 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class About(models.Model):
     full_name = models.CharField("Full Name", max_length=100)
-    role = models.CharField("Professional Role", max_length=100,help_text="e.g. Backend Developer")
+    role = models.CharField("Professional Role", max_length=100, help_text="e.g. Backend Developer")
     bio = models.TextField("Biography")
-    experience = models.PositiveIntegerField("Experience",default=1)
+    experience = models.PositiveIntegerField("Experience", default=1)
     based_in = models.CharField("Based In", max_length=50, help_text="e.g. Remote / Germany")
     availability = models.CharField("Availability", max_length=50, help_text="e.g. Freelance / Full-time")
 
@@ -72,7 +73,7 @@ class Skill(models.Model):
 
 
 class Site_info(models.Model):
-    address = models.CharField("Address", max_length=250, blank=True, null=True )
+    address = models.CharField("Address", max_length=250, blank=True, null=True)
     email = models.EmailField("Email")
     linkedin_url = models.URLField("LinkedIn", blank=True, null=True)
     github_url = models.URLField("GitHub", blank=True, null=True)
@@ -83,3 +84,23 @@ class Site_info(models.Model):
     class Meta:
         verbose_name = 'Site Info'
         verbose_name_plural = 'Site Infos'
+
+
+class Category(models.Model):
+    title = models.CharField("Title", max_length=100, unique=True)
+    slug = models.SlugField("Slug", max_length=100, unique=True, blank=True, )
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(args, **kwargs)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('category_detail', kwargs={'slug': self.slug})

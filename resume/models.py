@@ -104,6 +104,7 @@ class CV_pdf(models.Model):
     soft_skills = models.CharField("Soft-Skills", max_length=100)
     hard_skills = models.CharField("Hard-Skills", max_length=100)
     education = models.CharField("Education", max_length=100)
+
     certification = models.CharField("Certification", max_length=100)
     experience = models.CharField("Experience", max_length=100)
     summary = RichTextField("Summary", blank=True, null=True)

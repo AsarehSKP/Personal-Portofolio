@@ -4,6 +4,7 @@ from django.utils.text import slugify
 from PIL import Image
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
+from home.models import Category
 
 
 #  ServiceQuerySet   and    manager
@@ -34,7 +35,6 @@ class Service(models.Model):
 
     slug = models.SlugField("Slug", unique=True)
     status = models.CharField(max_length=10, choices=Status.choices, default=Status.DRAFT)
-    order = models.PositiveIntegerField("Display Order", default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -160,6 +160,7 @@ class BlogPost(models.Model):
         choices=Status.choices,
         default=Status.DRAFT
     )
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True,related_name='blog_posts')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -4,9 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3ebacfa-0890-4dfb-9f72-5fb81cec705a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="d3ebacfa-0890-4dfb-9f72-5fb81cec705a" name="Changes" comment="Resume and blog update backend committed">
+      <change afterPath="$PROJECT_DIR$/blog_app/migrations/0002_alter_blogpost_content.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_app/migrations/0003_remove_service_order_blogpost_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_app/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_app/templatetags/blog_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0002_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/home/categories.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templatetags/home_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/latest_posts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partials/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/migrations/0002_alter_service_managers_service_short_description_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/migrations/0003_remove_service_icon_service_icon_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/migrations/0004_alter_service_options_service_main_image_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/migrations/0005_servicefeature.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/migrations/0006_blogpost.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/migrations/0007_blogpost_author_bio_blogpost_author_image_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/templates/blog_app/service_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog_app/service_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog_app/templates/blog_app/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog_app/single.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0002_skill.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0003_about.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0004_contact.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/migrations/0005_site_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/counter.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/counter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/resume/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/resume/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume/migrations/0002_alter_project_project_type_alter_project_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/resume/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,25 +75,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.blog.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/asareh_92/pycharm-professional-2024.1/blog1/blog/blog_app/templates/blog_app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.blog.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/asareh_92/pycharm-professional-2024.1/blog1/blog/.venv/lib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/blog_app/templates/blog_app" />
@@ -67,6 +104,7 @@
       <recent name="$PROJECT_DIR$/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/ckeditor/ckeditor/plugins/emoji" />
       <recent name="$PROJECT_DIR$/templates/partials" />
       <recent name="$PROJECT_DIR$/static" />
     </key>
@@ -153,8 +191,52 @@
       <workItem from="1752429584845" duration="1551000" />
       <workItem from="1752433008780" duration="9326000" />
       <workItem from="1752503934797" duration="379000" />
-      <workItem from="1752504325411" duration="14958000" />
+      <workItem from="1752504325411" duration="19267000" />
+      <workItem from="1752585983130" duration="12116000" />
+      <workItem from="1752659030782" duration="15926000" />
+      <workItem from="1752755411931" duration="17160000" />
+      <workItem from="1752793059264" duration="1719000" />
+      <workItem from="1753183501959" duration="3444000" />
+      <workItem from="1753204191801" duration="5858000" />
+      <workItem from="1753269308990" duration="9048000" />
+      <workItem from="1753353914216" duration="18017000" />
+      <workItem from="1753461750045" duration="622000" />
+      <workItem from="1753531211391" duration="2004000" />
+      <workItem from="1753636036340" duration="2858000" />
+      <workItem from="1753804875221" duration="908000" />
+      <workItem from="1753806239928" duration="49000" />
+      <workItem from="1753807220873" duration="660000" />
+      <workItem from="1753815772358" duration="808000" />
+      <workItem from="1753871914445" duration="6533000" />
+      <workItem from="1753896883421" duration="7457000" />
+      <workItem from="1753965785214" duration="11191000" />
+      <workItem from="1754046179656" duration="4752000" />
     </task>
+    <task id="LOCAL-00001" summary="some changes committed">
+      <option name="closed" value="true" />
+      <created>1752604182844</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752604182844</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Resume backend committed">
+      <option name="closed" value="true" />
+      <created>1752695224530</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752695224530</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Resume and blog update backend committed">
+      <option name="closed" value="true" />
+      <created>1753375121042</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753375121042</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,5 +267,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="some changes committed" />
+    <MESSAGE value="Resume backend committed" />
+    <MESSAGE value="Resume and blog update backend committed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resume and blog update backend committed" />
   </component>
 </project>

@@ -41,6 +41,7 @@ class ResumeAdmin(admin.ModelAdmin):
         (None, {
             'fields': ('daterange', 'title', 'institution', 'description', 'column')
         }),
+
     )
 
 

@@ -1,11 +1,13 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from weasyprint import HTML
 from django.template.loader import render_to_string
 from .models import *
-from blog_app.models import Service,BlogPost
+from blog_app.models import Service, BlogPost
 from resume.models import *
 from django.contrib import messages
+from django.shortcuts import get_object_or_404, render
+from .models import Category
 
 
 # Create your views here.
@@ -65,3 +67,8 @@ def download_CVpdf(request, pk):
     response['Content-Disposition'] = f'attachment; filename="{cv.first_name}_{cv.last_name}_CV.pdf"'
     return response
 
+
+def category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    posts = category.blog_posts.published()
+    return render(request, 'blog_app/categories.html', {'category': category, 'posts': posts})
